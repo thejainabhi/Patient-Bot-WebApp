@@ -65,10 +65,9 @@ FriendlyChat.prototype.initFirebase = function () {
 
 // Loads chat messages history and listens for upcoming ones.
 FriendlyChat.prototype.loadMessages = function () {
-
   if (this.user) {
     // Reference to the /messages/ database path.
-    this.messagesRef = this.database.ref('messages/'+this.user.uid);
+    this.messagesRef = this.database.ref('messages/' + this.user.uid);
     // Make sure we remove all previous listeners.
     this.messagesRef.off();
 
@@ -98,8 +97,8 @@ FriendlyChat.prototype.saveMessage = function (e) {
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
       xhttp.setRequestHeader("Content-type", "application/json");
-      xhttp.setRequestHeader("Authorization", "Bearer 0a6a790d094746ae9fd24b47414dc1d7");
-      xhttp.send(JSON.stringify({ "query": "hi", "lang": "en", "sessionId": "abcdefghi" }));
+      xhttp.setRequestHeader("Authorization", "Bearer dcd2779937d349c9ac9eeb7e8043ab64");
+      xhttp.send(JSON.stringify({ "query": this.messageInput.value, "lang": "en", "sessionId": "abcdefghi" }));
       var response = JSON.parse(xhttp.responseText);
       console.log(response);
 
@@ -111,6 +110,24 @@ FriendlyChat.prototype.saveMessage = function (e) {
       }.bind(this)).catch(function (error) {
         console.error('Error writing new message to Firebase Database', error);
       });
+
+      if (response.result.action == "Cancer.Cancer-yes") {
+
+        console.log("symtom search " + response.result.contexts[0].parameters.CancerSynonyms);
+        var symtomp_request = new XMLHttpRequest();
+        symtomp_request.open("GET", "/patient_info_cancer.html", false);
+        symtomp_request.send();
+
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(symtomp_request.responseText, "text/xml");
+
+
+        var x = doc.getElementsByClassName("search-result-item result-pil")
+        for (var i = 0; i < x.length && x < 4; i++) {
+          this.displayMessage(null, "random ", x[i].innerText);
+        }
+        console.log("symtom search results :" + symtomp_request.responseText);
+      }
 
       // Clear message text field and SEND button state.
       FriendlyChat.resetMaterialTextfield(this.messageInput);
