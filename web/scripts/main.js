@@ -132,6 +132,8 @@ FriendlyChat.prototype.saveMessage = function (e) {
           var container = document.createElement('div');
           container.innerHTML = x[i].innerHTML;
           this.messageList.appendChild(container);
+          this.messageList.scrollTop = this.messageList.scrollHeight;
+          this.messageInput.focus();
         }
         // console.log("symtom search results :" + symtomp_request.responseText);
       }
