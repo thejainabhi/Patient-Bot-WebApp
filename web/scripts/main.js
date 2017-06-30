@@ -118,15 +118,22 @@ FriendlyChat.prototype.saveMessage = function (e) {
         symtomp_request.open("GET", "/patient_info_cancer.html", false);
         symtomp_request.send();
 
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(symtomp_request.responseText, "text/xml");
+        var doc = document.implementation.createHTMLDocument("example");
+        doc.documentElement.innerHTML = symtomp_request.responseText;
+
+        // var parser = new DOMParser();
+        // var doc = parser.parseFromString(symtomp_request.responseText, "text/html");
 
 
         var x = doc.getElementsByClassName("search-result-item result-pil")
-        for (var i = 0; i < x.length && x < 4; i++) {
-          this.displayMessage(null, "random ", x[i].innerText);
+        for (var i = 0; i < x.length && i < 4; i++) {
+          console.log(x[i].innerText);
+          // this.displayMessage("key" + i, "Patient bot", x[i].innerHTML);
+          var container = document.createElement('div');
+          container.innerHTML = x[i].innerHTML;
+          this.messageList.appendChild(container);
         }
-        console.log("symtom search results :" + symtomp_request.responseText);
+        // console.log("symtom search results :" + symtomp_request.responseText);
       }
 
       // Clear message text field and SEND button state.
