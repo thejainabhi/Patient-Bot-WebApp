@@ -24,6 +24,7 @@ function FriendlyChat() {
   this.messageForm = document.getElementById('message-form');
   this.messageInput = document.getElementById('message');
   this.submitButton = document.getElementById('submit');
+  this.micButton = document.getElementById('speech');
   this.submitImageButton = document.getElementById('submitImage');
   this.imageForm = document.getElementById('image-form');
   this.mediaCapture = document.getElementById('mediaCapture');
@@ -35,6 +36,7 @@ function FriendlyChat() {
 
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
+  this.micButton.addEventListener('click', this.startSpeech.bind(this));
   this.signOutButton.addEventListener('click', this.signOut.bind(this));
   this.signInButton.addEventListener('click', this.signIn.bind(this));
 
@@ -86,64 +88,92 @@ FriendlyChat.prototype.saveMessage = function (e) {
   e.preventDefault();
   // Check that the user entered a message and is signed in.
   if (this.messageInput.value && this.checkSignedInWithMessage()) {
-    var currentUser = this.auth.currentUser;
-
     // Add a new message entry to the Firebase Database.
+    this.chatWithBot(this.messageInput.value);
+  }
+};
+
+FriendlyChat.prototype.chatWithBot = function (message) {
+  var currentUser = this.auth.currentUser;
+  this.messagesRef.push({
+    name: currentUser.displayName,
+    text: message,
+    photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
+  }).then(function () {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.setRequestHeader("Authorization", "Bearer dcd2779937d349c9ac9eeb7e8043ab64");
+    xhttp.send(JSON.stringify({ "query": message, "lang": "en", "sessionId": "abcdefghi" }));
+    var response = JSON.parse(xhttp.responseText);
+    console.log(response);
+
     this.messagesRef.push({
-      name: currentUser.displayName,
-      text: this.messageInput.value,
-      photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
+      name: "Patient bot",
+      text: response.result.fulfillment.speech,
+      photoUrl: '/images/patient_bot_logo.jpg'
     }).then(function () {
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
-      xhttp.setRequestHeader("Content-type", "application/json");
-      xhttp.setRequestHeader("Authorization", "Bearer dcd2779937d349c9ac9eeb7e8043ab64");
-      xhttp.send(JSON.stringify({ "query": this.messageInput.value, "lang": "en", "sessionId": "abcdefghi" }));
-      var response = JSON.parse(xhttp.responseText);
-      console.log(response);
-
-      this.messagesRef.push({
-        name: "Patient bot",
-        text: response.result.fulfillment.speech,
-        photoUrl: '/images/patient_bot_logo.jpg'
-      }).then(function () {
-      }.bind(this)).catch(function (error) {
-        console.error('Error writing new message to Firebase Database', error);
-      });
-
-      if (response.result.action == "Cancer.Cancer-yes") {
-
-        console.log("symtom search " + response.result.contexts[0].parameters.CancerSynonyms);
-        var symtomp_request = new XMLHttpRequest();
-        symtomp_request.open("GET", "/patient_info_cancer.html", false);
-        symtomp_request.send();
-
-        var doc = document.implementation.createHTMLDocument("example");
-        doc.documentElement.innerHTML = symtomp_request.responseText;
-
-        // var parser = new DOMParser();
-        // var doc = parser.parseFromString(symtomp_request.responseText, "text/html");
-
-
-        var x = doc.getElementsByClassName("search-result-item result-pil")
-        for (var i = 0; i < x.length && i < 4; i++) {
-          console.log(x[i].innerText);
-          // this.displayMessage("key" + i, "Patient bot", x[i].innerHTML);
-          var container = document.createElement('div');
-          container.innerHTML = x[i].innerHTML;
-          this.messageList.appendChild(container);
-          this.messageList.scrollTop = this.messageList.scrollHeight;
-          this.messageInput.focus();
-        }
-        // console.log("symtom search results :" + symtomp_request.responseText);
-      }
-
-      // Clear message text field and SEND button state.
-      FriendlyChat.resetMaterialTextfield(this.messageInput);
-      this.toggleButton();
     }.bind(this)).catch(function (error) {
       console.error('Error writing new message to Firebase Database', error);
     });
+
+    if (response.result.action == "Cancer.Cancer-yes") {
+
+      console.log("symtom search " + response.result.contexts[0].parameters.CancerSynonyms);
+      var symtomp_request = new XMLHttpRequest();
+      symtomp_request.open("GET", "/patient_info_cancer.html", false);
+      symtomp_request.send();
+
+      var doc = document.implementation.createHTMLDocument("example");
+      doc.documentElement.innerHTML = symtomp_request.responseText;
+
+      var x = doc.getElementsByClassName("search-result-item result-pil")
+      for (var i = 0; i < x.length && i < 2; i++) {
+        console.log(x[i].innerText);
+        var container = document.createElement('div');
+        container.innerHTML = x[i].innerHTML;
+        this.messageList.appendChild(container);
+        this.messageList.scrollTop = this.messageList.scrollHeight;
+        this.messageInput.focus();
+      }
+    }
+
+    // Clear message text field and SEND button state.
+    FriendlyChat.resetMaterialTextfield(this.messageInput);
+    this.toggleButton();
+  }.bind(this)).catch(function (error) {
+    console.error('Error writing new message to Firebase Database', error);
+  });
+};
+
+FriendlyChat.prototype.startSpeech = function (e) {
+  e.preventDefault();
+  if (!('webkitSpeechRecognition' in window)) {
+    alert('Upgrade ur browser');
+  } else {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.start();
+
+    var final_transcript = '';
+    recognition.onresult = function (event) {
+      var interim_transcript = '';
+      if (typeof (event.results) == 'undefined') {
+        recognition.onend = null;
+        recognition.stop();
+        upgrade();
+        return;
+      }
+      for (var i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          final_transcript += event.results[i][0].transcript;
+        } else {
+          interim_transcript += event.results[i][0].transcript;
+        }
+      }
+      friendlyChat.chatWithBot(final_transcript);
+    };
   }
 };
 

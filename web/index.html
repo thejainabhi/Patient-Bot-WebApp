@@ -48,6 +48,9 @@
   <!-- App Styling -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="styles/main.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -87,6 +90,9 @@
             </div>
             <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
               Send
+            </button>
+            <button id="speech" center class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="startSpeech(event)">
+              <i style="font-size:30px" class="fa fa-microphone"></i>
             </button>
           </form>
           <form id="image-form" action="#">
