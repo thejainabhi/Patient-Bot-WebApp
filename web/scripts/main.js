@@ -93,58 +93,163 @@ FriendlyChat.prototype.saveMessage = function (e) {
   }
 };
 
+
+var k=0;
+var ContentLocationInDOM = null;
+var sendButtonClicked = false;
+var multipleButtonsClicked = false;
+var externalURL = "patient.info/health/hay-fever-leaflet";
+
 FriendlyChat.prototype.chatWithBot = function (message) {
   var currentUser = this.auth.currentUser;
+  var action = 0;
   this.messagesRef.push({
     name: currentUser.displayName,
     text: message,
     photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
   }).then(function () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.setRequestHeader("Authorization", "Bearer dcd2779937d349c9ac9eeb7e8043ab64");
-    xhttp.send(JSON.stringify({ "query": message, "lang": "en", "sessionId": "abcdefghi" }));
-    var response = JSON.parse(xhttp.responseText);
-    console.log(response);
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.setRequestHeader("Authorization", "Bearer 09744aa8a2a04880bd0120c8da49e3d5 ");
+      xhttp.send(JSON.stringify({"query": message, "lang": "en", "sessionId": "abcdefghi"}));
 
-    this.messagesRef.push({
-      name: "Patient bot",
-      text: response.result.fulfillment.speech,
-      photoUrl: '/images/patient_bot_logo.jpg'
-    }).then(function () {
-    }.bind(this)).catch(function (error) {
-      console.error('Error writing new message to Firebase Database', error);
-    });
+      var response = JSON.parse(xhttp.responseText);
+      console.log(response);
 
-    if (response.result.action == "Cancer.Cancer-yes") {
 
-      console.log("symtom search " + response.result.contexts[0].parameters.CancerSynonyms);
-      var symtomp_request = new XMLHttpRequest();
-      symtomp_request.open("GET", "/patient_info_cancer.html", false);
-      symtomp_request.send();
+      this.messagesRef.push({
+          name: "Patient bot",
+          text: response.result.fulfillment.speech,
+          photoUrl: '/images/patient_bot_logo.jpg'
+      }).then(function () {
+      }.bind(this)).catch(function (error) {
+          console.error('Error writing new message to Firebase Database', error);
+      });
 
-      var doc = document.implementation.createHTMLDocument("example");
-      doc.documentElement.innerHTML = symtomp_request.responseText;
-
-      var x = doc.getElementsByClassName("search-result-item result-pil")
-      for (var i = 0; i < x.length && i < 2; i++) {
-        console.log(x[i].innerText);
-        var container = document.createElement('div');
-        container.innerHTML = x[i].innerHTML;
-        this.messageList.appendChild(container);
-        this.messageList.scrollTop = this.messageList.scrollHeight;
-        this.messageInput.focus();
-      }
+      /*
+      if (response.result.parameters.SearchTerm == "Hay Fever") {
+       //   alert('hi');
+          //$.get('https://webknox-question-answering.p.mashape.com/questions/converse?mashape-key=' + apiKey + '&contextId=' + contextId + '&text=' + encodeURIComponent(query), function (data) {
+/*
+          $.get('https://patient.info/health/hay-fever-leaflet', {}, function (data) {
+              alert('hello');
+              alert(data);
+          });*/
+        //  var jq = jQuery.noConflict();
+    /*      $.get('google.php', function (data) {
+              alert('hello');
+              alert(data);
+          });
+$.ajax({
+    url: '//patient.info/health/hay-fever-leaflet',
+    dataType: 'jsonP',
+    success: function(data){
+alert(data);
+        }
     }
+);*/
 
-    // Clear message text field and SEND button state.
-    FriendlyChat.resetMaterialTextfield(this.messageInput);
-    this.toggleButton();
+
+
+
+          /*
+           var data ="hello";
+           $.get("https://patient.info/health/hay-fever-leaflet",function (response) {
+           data = response;
+
+           var doc = document.implementation.createHTMLDocument("example");
+           doc.documentElement.innerHTML = response.responseText;
+
+           //window.location = "https://patient.info/health/hay-fever-leaflet";
+
+
+           $.get("https://patient.info/health/hay-fever-leaflet").success(function (data) {
+           alert(data);
+           }); */
+
+         // $(document).ready(loadContent);
+      //}
+
+     // if (response.result.action == "user.fever" || response.result.action == "fever.fever-custom") {
+      var stringList = response.result.parameters.SymptomList.toString();
+      if (stringList) {
+          var buttons = stringList.split(',');
+          var buttonContainer = document.getElementById('messages');
+
+          for (var j = 0;j < buttons.length; j++) {
+
+              var newButton = document.createElement('input');
+              newButton.type = 'button';
+              Object.assign(newButton.style, {
+                  left: "20%", right: "20%", backgroundColor: "cyan", top: "20%", width: "20%", height: "40px", borderColor: "black",
+                  position: "center", marginLeft: "25px", borderRadius: "25px", whiteSpace: "normal", cursor: "pointer", fontsize: "12"
+              });
+
+              newButton.id = k;
+              newButton.value = buttons[j].toString().toUpperCase();
+              buttonContainer.appendChild(newButton);
+              newButton.addEventListener('mouseover',mouseHover.bind(this,newButton.id));
+              newButton.addEventListener('mouseout',mouseOut.bind(this,newButton.id));
+              newButton.addEventListener('click', buttonClick.bind(this, buttons[j].toString(),newButton.id));
+              k = k+1;
+          }
+          action = 1;
+      }
+
+      // Clear message text field and SEND button state.
+      if (action == 0) {
+        FriendlyChat.resetMaterialTextfield(this.messageInput);
+        this.toggleButton();
+
+       }
+       else {
+        this.toggleButton();
+        FriendlyChat.resetMaterialTextfield(this.messageInput);
+      }
+
   }.bind(this)).catch(function (error) {
     console.error('Error writing new message to Firebase Database', error);
   });
 };
+
+function buttonClick(text, id) {
+    if (multipleButtonsClicked == true && sendButtonClicked == false ) {
+        this.messageInput.value += ',' + text;
+
+    }
+    else if(sendButtonClicked == false && multipleButtonsClicked == false) {
+        this.messageInput.value = text;
+        //var button = document.getElementById(id);
+        multipleButtonsClicked = true;
+    }
+}
+
+function mouseHover(id) {
+    //var element = document.getElementById(id);
+    var element = document.getElementById(id);
+    element.style.backgroundColor = "yellow";
+}
+
+function mouseOut(id){
+    var element = document.getElementById(id);
+    element.style.backgroundColor = "cyan";
+}
+
+
+function buttonStyle(buttonId) {
+    var elem = document.getElementById(buttonId);
+    elem.style.top = "20%";
+    elem.style.left ="20%";
+    elem.style.width = "80px";
+    elem.style.borderColor = "black"
+    elem.style.position = "center";
+    elem.style.marginLeft = "25px";
+    elem.style.backgroundColor="cyan";
+    elem.style.borderRadius="10px";
+    elem.style.whiteSpace="normal";
+    //newButton.value = buttons[i].toString();
+}
 
 FriendlyChat.prototype.startSpeech = function (e) {
   e.preventDefault();
@@ -386,6 +491,7 @@ FriendlyChat.prototype.toggleButton = function () {
     this.submitButton.removeAttribute('disabled');
   } else {
     this.submitButton.setAttribute('disabled', 'true');
+      sendButtonClicked = true;
   }
 };
 
