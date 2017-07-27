@@ -100,44 +100,9 @@ FriendlyChat.prototype.chatWithBot = function (message) {
     text: message,
     photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
   }).then(function () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://api.api.ai/v1/query?v=20150910", false);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.setRequestHeader("Authorization", "Bearer dcd2779937d349c9ac9eeb7e8043ab64");
-    xhttp.send(JSON.stringify({ "query": message, "lang": "en", "sessionId": "abcdefghi" }));
-    var response = JSON.parse(xhttp.responseText);
-    console.log(response);
-
-    this.messagesRef.push({
-      name: "Patient bot",
-      text: response.result.fulfillment.speech,
-      photoUrl: '/images/patient_bot_logo.jpg'
-    }).then(function () {
-    }.bind(this)).catch(function (error) {
-      console.error('Error writing new message to Firebase Database', error);
-    });
-
-    if (response.result.action == "Cancer.Cancer-yes") {
-
-      console.log("symtom search " + response.result.contexts[0].parameters.CancerSynonyms);
-      var symtomp_request = new XMLHttpRequest();
-      symtomp_request.open("GET", "/patient_info_cancer.html", false);
-      symtomp_request.send();
-
-      var doc = document.implementation.createHTMLDocument("example");
-      doc.documentElement.innerHTML = symtomp_request.responseText;
-
-      var x = doc.getElementsByClassName("search-result-item result-pil")
-      for (var i = 0; i < x.length && i < 2; i++) {
-        console.log(x[i].innerText);
-        var container = document.createElement('div');
-        container.innerHTML = x[i].innerHTML;
-        this.messageList.appendChild(container);
-        this.messageList.scrollTop = this.messageList.scrollHeight;
-        this.messageInput.focus();
-      }
-    }
-
+    botClient.textRequest(message)
+      .then(onBotSuccess)
+      .catch(onBotFailure);
     // Clear message text field and SEND button state.
     FriendlyChat.resetMaterialTextfield(this.messageInput);
     this.toggleButton();
@@ -398,6 +363,42 @@ FriendlyChat.prototype.checkSetup = function () {
   }
 };
 
+// ApiAi response callbacks
+function onBotSuccess(serverResponse) {
+  console.log(serverResponse);
+
+  friendlyChat.messagesRef.push({
+    name: "Patient bot",
+    text: serverResponse.result.fulfillment.speech,
+    photoUrl: '/images/patient_bot_logo.jpg'
+  });
+
+  if (serverResponse.result.action == "Cancer.Cancer-yes") {
+    console.log("symtom search " + serverResponse.result.contexts[0].parameters.CancerSynonyms);
+    var symtomp_request = new XMLHttpRequest();
+    symtomp_request.open("GET", "/patient_info_cancer.html", false);
+    symtomp_request.send();
+
+    var doc = document.implementation.createHTMLDocument("example");
+    doc.documentElement.innerHTML = symtomp_request.responseText;
+
+    var x = doc.getElementsByClassName("search-result-item result-pil")
+    for (var i = 0; i < x.length && i < 2; i++) {
+      console.log(x[i].innerText);
+      var container = document.createElement('div');
+      container.innerHTML = x[i].innerHTML;
+      friendlyChat.messageList.appendChild(container);
+      friendlyChat.messageList.scrollTop = friendlyChat.messageList.scrollHeight;
+      friendlyChat.messageInput.focus();
+    }
+  }
+}
+
+function onBotFailure(serverError) {
+  console.log(serverError);
+}
+
 window.onload = function () {
   window.friendlyChat = new FriendlyChat();
+  window.botClient = new ApiAi.ApiAiClient({ accessToken: 'dcd2779937d349c9ac9eeb7e8043ab64' });
 };
