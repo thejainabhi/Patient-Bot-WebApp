@@ -1,423 +1,469 @@
 <html lang="en">
 
 <head>
-    <title>Symptom Checker, Health Information and Medicines Guide | Patient</title>
-    <link rel="shortcut icon" href="https://patient.azureedge.net/gfx/favicon.ico">
-    <link rel="icon" href="https://patient.azureedge.net/gfx/favicon.gif" type="image/gif">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://patient.azureedge.net/res/636337221681932863/p2r/hp.min.css" rel="stylesheet">
-    <link href="https://patient.azureedge.net/res/636337221681932863/p2r/p2r.min.css" media="screen" rel="stylesheet">
-    <link href="https://patient.azureedge.net/res/636337221681932863/p2r/print.min.css" media="print" rel="stylesheet">
-    <meta content="Orchard" name="generator">
-    <link href="https://patient.info/in" hreflang="en-IN" rel="alternate">
-    <link href="https://patient.info/" hreflang="x-default" rel="alternate">
-    <link href="https://patient.info/" rel="canonical">
-    <meta property="fb:app_id" content="402233589905837">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:title" content="Symptom Checker, Health Information and Medicines Guide">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://patient.info/">
-    <meta property="p:domain_verify" content="03105afe891064ab36bab9260198eb12">
-    <meta property="twitter:title" content="Symptom Checker, Health Information and Medicines Guide">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@patient">
-    <meta name="twitter:site" content="@patient">
-    <meta property="bt:body" content="class='bt-body'">
-    <meta name="description" property="og:description" content="The same info as provided by GPs to patients during consultations,health/disease leaflets,patient support orgs,all about medicines,book GP appts online,interactive patient experience forum">
-    <meta name="keywords" content="patient information,medical information,advice,health,health information,health articles,health problems,health news,mens health,womens health,childrens health,medicines">
-    <meta name="og:image" property="og:image" content="https://patient.azureedge.net/graphics/facebook-logo.jpg?new=20150521">
-    <meta name="twitter:description" content="The same info as provided by GPs to patients during consultations,health/disease leaflets,patient support orgs,all about medicines,book GP appts online,interactive patient experience forum">
-    </head>
-<style type="text/css">
-    #parent {
-        margin: 0 auto;
-        width: 980px;
-        float: none;
-    }
+  <title>Patient Bot</title>
+  <link rel="shortcut icon" href="https://patient.azureedge.net/gfx/favicon.ico">
+  <link rel="icon" href="https://patient.azureedge.net/gfx/favicon.gif" type="image/gif">
+  <link href="https://patient.azureedge.net/res/636337221681932863/p2r/hp.min.css" rel="stylesheet">
+  <link href="https://patient.azureedge.net/res/636337221681932863/p2r/p2r.min.css" media="screen" rel="stylesheet">
+  <link href="https://patient.azureedge.net/res/636337221681932863/p2r/print.min.css" media="print" rel="stylesheet">
 
-    #child-left {
-        float: left;
-        width: 300px;
-        height: 200px;
-        border: solid 1px #0F0;
-    }
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
 
-    #child-right {
-        float: left;
-        width: 100px;
-    }
-</style>
-<div id="parent">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-    <body class="desktop" data-rate0="0.78775" data-ptoken="c627ff16-ab83-4b3a-a534-7342054c9c65" data-globaltargeting="{&quot;Audience&quot;:&quot;Patient&quot;}">
-        <div class="zone zone-body-head">
-            <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSV6TC" height=0 width=0 style=display:none;visibility:hidden&gt;&lt;/iframe&gt;</noscript>
-            <noscript>&lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;amp;c2=18382780&amp;amp;cv=2.0&amp;amp;cj=1"&gt;</noscript>
-        </div><a class="skip-to-content button button-red nomob" href="#content">Skip to content</a>
-        <div id="uber">
-            <div class="mobile-viewport overthrow"><a name="header"></a>
-                <header id="site_head" role="banner">
-                    <div id="account"><span class="welcome">Welcome to Patient</span>
-                        <div class="auth-opts reg-opts"><span class="title mob-hidden"><a href="#" data-mobile-href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Register</a></span>                            <span class="title nodesk"><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Register</a></span>
-                            <ul class="opts nomob">
-                                <li><a class="first" target="_blank" href="https://patient.emisaccess.co.uk/register">Patient Access</a></li>
-                                <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Patient</a></li>
-                                <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2Fforums&amp;referrer=patient">- Forums</a></li>
-                                <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fauth.patient.info%2Fmy-account%2Fsubscriptions&amp;referrer=patient"
-                                        class="last">- PatientPro</a></li>
-                            </ul>
-                        </div><span>|</span>
-                        <div class="auth-opts signin-opts"><span class="title mob-hidden"><a href="#" data-mobile-href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Sign in</a></span>                            <span class="title nodesk"><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Sign in</a></span>
-                            <ul class="opts nomob">
-                                <li><a class="first" target="_blank" href="https://patient.emisaccess.co.uk">Patient Access</a></li>
-                                <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Patient</a></li>
-                                <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2Fforums&amp;referrer=patient">- Forums</a></li>
-                                <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2Fmy-account%2Fnotes&amp;referrer=patient"
-                                        class="last">- PatientPro</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="site_logo"><a class="screen-reader" href="/">Patient - Trusted medical information and support</a></div><a class="screen-reader"
-                        href="#content">Skip to content</a>
-                    <div class="secondary">
-                        <p class="nomob"><a class="" href="/blogs">Blogs</a> | <a class="" href="/symptom-checker">Symptom checker</a></p>
-                        <button type="button" data-track="search" class="site_btn site_btn--search nodesk"><i class="icon icon-search"></i></button>
-                        <form method="get" action="/search.asp" class="search autocomplete-selfsubmit mob-hidden" role="search">
-                            <fieldset>
-                                <label> <span class="label screen-reader">Search Patient</span> <span class="field"> <input type="text" class="text search-autocomplete ui-autocomplete-input" name="searchterm" accesskey="4" placeholder="Search Patient" autocomplete="off"> </span> </label>
-                                <input type="hidden" name="searchcoll" value="All">
-                                <button type="submit" class="icon icon-search search-button"></button>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <button type="button" data-track="menu" class="site_btn site_btn--all nodesk"><i class="icon icon-menu"></i></button>
-                    <nav class="site_nav mob-hidden" role="navigation">
-                        <ul>
-                            <li class="nav-item patientaccess nodesk"><a class="nav-link" href="/patient-access">Patient Access</a></li>
-                            <li class="nav-item home current"><a class="nav-link" accesskey="1" href="/">Home</a></li>
-                            <li class="nav-item patient"><a class="nav-link" href="/health">Health Information</a>
-                                <div class="menu nomob" id="patient_nav"><a href="/health/a-z" class="browse"><i class="icon icon-az"></i> Health A-Z</a> <a href="/health/categories"
-                                        class="browse"><i class="icon icon-categories"></i> All categories</a>
-                                    <div class="top-articles">
-                                        <p class="top-articles_title">Most popular</p>
-                                        <ul class="top-articles_list">
-                                            <li><a href="/health/chest-infection">Chest Infection</a></li>
-                                            <li><a href="/health/chest-pain-leaflet">Chest Pain</a></li>
-                                            <li><a href="/health/heel-and-foot-pain-plantar-fasciitis">Heel and Foot Pain</a></li>
-                                            <li><a href="/health/rectal-bleeding-blood-in-faeces">Rectal Bleeding</a></li>
-                                            <li><a href="/health/food-poisoning-in-adults">Food Poisoning in Adults</a></li>
-                                        </ul>
-                                    </div>
-                                    <ul class="mega-menu">
-                                        <li class="diabetes"><a href="/diabetes"> <span class="icon icon-diabetes"></span><p class="title">Diabetes Hub</p><p>Visit our Diabetes health hub</p></a></li>
-                                        <li class="depression"><a href="/depression"> <span class="icon icon-mental"></span><p class="title">Depression Hub</p><p>Visit our Depression health hub</p></a></li>
-                                        <li class="symptom"><a href="/symptom-checker"> <span class="icon icon-symptom"></span><p class="title">Symptom Checker</p><p>Help diagnose common conditions</p></a></li>
-                                        <li class="media"><a href="/health/media"> <span class="icon icon-video"></span><p class="title">Videos and slideshows</p><p>Watch and learn about your health</p></a></li>
-                                        <li class="da"><a href="/decision-aids"> <span class="icon icon-da"></span><p class="title">Decision Aids</p><p>Help choosing the right treatment</p></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item meds"><a class="nav-link" href="/medicine">Medicines</a>
-                                <div class="menu nomob" id="meds_nav"><a href="/medicine/a-z" class="browse"><i class="icon icon-az"></i> Medicines A-Z</a>
-                                    <a href="/medicine/categories" class="browse"><i class="icon icon-categories"></i> All categories</a>                                    <a href="/clinical-trials" class="browse"><i class="icon icon-tests"></i> Clinical Trials</a>
-                                    <div class="top-articles">
-                                        <p class="top-articles_title">Most popular</p>
-                                        <ul class="top-articles_list">
-                                            <li><a href="/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn">Naproxen (Naprosyn)</a></li>
-                                            <li><a href="/medicine/citalopram-cipramil-paxoran">Citalopram (Cipramil, Paxoran)</a></li>
-                                            <li><a href="/medicine/flucloxacillin-for-infection-floxapen">Flucloxacillin (Floxapen)</a></li>
-                                            <li><a href="/medicine/co-amoxiclav-for-infections-augmentin">Co-amoxiclav (Augmentin)</a></li>
-                                            <li><a href="/medicine/paracetamol-calpol-disprol-hedex-panadol">Paracetamol (Calpol, Disprol)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item pro"><a class="nav-link" href="/patientplus">Professional Reference</a>
-                                <div class="menu nomob" id="pro_nav"><a href="/patientplus/a-z" class="browse"><i class="icon icon-az"></i> PatientPlus A-Z</a>
-                                    <ul class="mega-menu">
-                                        <li class="ppro"><a href="/complete"> <span class="icon icon-ppro"></span><p class="title">PatientPro Complete</p><p>Create a reflective diary, track the pages you read and get ads free experience</p></a></li>
-                                        <li class="calc"><a href="/medical-calculators"> <span class="icon icon-calc"></span><p class="title">Medical Calculators</p></a></li>
-                                        <li class="guidelines"><a href="/guidelines"> <span class="icon icon-guidelines"></span><p class="title">Clinical Guidelines</p></a></li>
-                                        <li class="updates"><a href="/content-updates"> <span class="icon icon-updates"></span><p class="title">New leaflets and updates</p></a></li>
-                                        <li class="da"><a href="/decision-aids"> <span class="icon icon-da"></span><p class="title">Decision Aids</p></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item forum"><a class="nav-link" href="/forums">Forums</a></li>
-                            <li class="nav-item directory"><a class="nav-link" href="/directory">Directory</a></li>
-                            <li class="nav-item blogs nodesk"><a class="nav-link" href="/blogs">Blogs</a></li>
-                            <li class="nav-item nomob access2"><a href="/patient-access" class="nav-link">Patient Access</a>
-                                <div class="menu pa-reg"><a href="https://patient.emisaccess.co.uk/" target="_blank"><span class="icon icon-padlock"></span> Sign in</a>                                    <a href="https://patient.emisaccess.co.uk/register" target="_blank"><span class="icon icon-access"></span> Register</a></div>
-                            </li>
-                        </ul>
-                    </nav>
-                </header><a id="to-content" accesskey="S"></a>
-                <section id="content" role="main">
-                    <div class="container_12">
-                        <div id="container" class="homepage nolayout">
-                            <div class="zone zone-content">
-                                <article class="homepage content-item">
-                                    <header></header>
-                                    <div class="orchard-layouts-root">
-                                        <div class="table grid-container">
-                                            <div class="row">
-                                                <div class="span-12 cell">
-                                                    <article class="homepage_container--top">
-                                                        <h2 class="homepage_container--titleabove">How can</h2>
-                                                        <h2 class="homepage_container--titlebelow">we help?</h2>
-                                                        <ul class="homepage_tabs">
-                                                            <a href="#">
-                                                                <li class="homepage_tabs--tab active"><span class="icon icon-pil"></span>Search Health
-                                                                    <br> Information</li>
-                                                            </a>
-                                                            <a href="/symptom-checker" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','symptomchecker'])">
-                                                                <li class="homepage_tabs--tab"><span class="icon icon-symptom"></span>Search by
-                                                                    <br> Symptoms</li>
-                                                            </a>
-                                                            <a href="/health/a-z" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','A-Z'])">
-                                                                <li class="homepage_tabs--tab"><span class="icon icon-az"></span>Search by
-                                                                    <br> letter</li>
-                                                            </a>
-                                                            <a href="/health/categories" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','categories'])">
-                                                                <li class="homepage_tabs--tab"><span class="icon icon-categories"></span>Search by
-                                                                    <br> Category</li>
-                                                            </a>
-                                                        </ul>
-                                                        <div class="homepage_form--wrapper">
-                                                            <form method="get" action="/search.asp" class="home-search" onsubmit="_gaq.push(['_trackEvent','Homepage','search-button','search-clicked'])">
-                                                                <fieldset>
-                                                                    <label> <span class="label screen-reader">Search patient.info</span> <span class="field"> <input type="text" class="text" name="searchterm" accesskey="4" placeholder="Search..." autocomplete="off" data-cip-id="cIPJQ342845643"> </span> </label>
-                                                                    <input type="hidden" name="searchcoll" value="All">
-                                                                    <input type="submit" class="search-big" alt="Search" value="Search">
-                                                                </fieldset>
-                                                            </form>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            </div>
-                                            <div class="row grid-container">
-                                                <div class="span-6 cell grid-50">
-                                                    <div style="overflow:hidden">
-                                                        <div class="homepage_hub homepage_hub--diabetes"><i class="icon icon-diabetes icon-large"></i>
-                                                            <h2>Diabetes</h2><a href="/diabetes" title="Diabetes health hub"
-                                                                class="homepage_hub-link" onclick="_gaq.push(['_trackEvent','Homepage','hublink','diabeteshub'])">View health hub <i class="icon icon-raquo"></i></a></div>
-                                                        <div class="homepage_hub homepage_hub--depression"><i class="icon icon-mental icon-large"></i>
-                                                            <h2>Depression</h2><a href="/depression" title="Depression health hub"
-                                                                class="homepage_hub-link" onclick="_gaq.push(['_trackEvent','Homepage','hublink','depressionhub'])">View health hub <i class="icon icon-raquo"></i></a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="span-6 cell homepage_main--symptomchecker grid-50"><span class="icon icon-symptom"></span>
-                                                    <h2>Symptom Checker</h2>
-                                                    <p class="sub">Assess your symptoms online through our free symptom checker.</p><a href="/symptom-checker"
-                                                        onclick="_gaq.push(['_trackEvent','Homepage','symptomlink','symptombutton'])"
-                                                        class="homepage_main--button">Check Symptoms <span class="icon icon-raquo"></span></a></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="span-12 cell">
-                                                    <div class="homepage_popular">
-                                                        <h3 class="homepage_popular-title">Most popular</h3>
-                                                        <ul class="homepage_popular-list grid-container">
-                                                            <li class="grid-33"><a href="/health/chest-infection">Chest Infection</a></li>
-                                                            <li class="grid-33"><a href="/health/chest-pain-leaflet">Chest Pain</a></li>
-                                                            <li class="grid-33"><a href="/health/heel-and-foot-pain-plantar-fasciitis">Heel and Foot Pain</a></li>
-                                                            <li class="grid-33"><a href="/health/rectal-bleeding-blood-in-faeces">Rectal Bleeding</a></li>
-                                                            <li class="grid-33"><a href="/health/food-poisoning-in-adults">Food Poisoning in Adults</a></li>
-                                                            <li class="grid-33"><a href="/health/bacterial-vaginosis-leaflet">Bacterial Vaginosis</a></li>
-                                                            <li class="grid-33"><a href="/health/medicines-for-nausea">Medicines for Nausea</a></li>
-                                                            <li class="grid-33"><a href="/health/care-of-rib-injuries">Care of Rib Injuries</a></li>
-                                                            <li class="grid-33"><a href="/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn">Naproxen (Naprosyn)</a></li>
-                                                            <li class="grid-33"><a href="/medicine/citalopram-cipramil-paxoran">Citalopram (Cipramil, Paxoran)</a></li>
-                                                            <li class="grid-33"><a href="/medicine/flucloxacillin-for-infection-floxapen">Flucloxacillin (Floxapen)</a></li>
-                                                            <li class="grid-33"><a href="/medicine/co-amoxiclav-for-infections-augmentin">Co-amoxiclav (Augmentin)</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="span-12 cell">
-                                                    <article class="homepage_sarah--container">
-                                                        <div class="homepage_sarah--logo"></div>
-                                                        <p>TV's Dr Sarah Jarvis' exclusive blogs and health information videos</p>
-                                                        <div class="homepage_sarah--blog-list">
-                                                            <ul>
-                                                                <li><a href="/blogs/sarah-says/2017/06/oral-cancer-the-signs-to-spot">Oral Cancer: the signs to spot</a></li>
-                                                                <li><a href="/blogs/sarah-says/2017/06/common-medical-myths-gps-often-hear">Common medical myths GPs often hear</a></li>
-                                                                <li><a href="/blogs/sarah-says/2017/06/heart-attack-risk-how-do-you-know">Heart attack risk - how do you know?</a></li>
-                                                            </ul>
-                                                        </div><a href="/blogs/sarah-says" onclick="pa.trackEvent('Homepage','SarahLink','SarahsBlog')"
-                                                            class="homepage_sarah--button active">Sarah's Blog</a> <a href="/health/media/videos/drsarah"
-                                                            onclick="pa.trackEvent('Homepage','SarahLink','SarahsVideos')" class="homepage_sarah--button">Sarah's videos</a>
-                                                        <div style="top:20px" class="ad ad-300">
-                                                            <div class="advertise-with-us js-gizmo" data-gizmo="advert"><span class="advertise-title">Advertisement</span><a href="/adfree"
-                                                                    target="_top" class="advertise-close">�</a></div>
-                                                            <div id="PUK-Middle-Home" class="dfp dfp-all display-block" data-adunit="PUK-Middle-Home" data-dimensions="300x250" data-targeting="{}"
-                                                                data-google-query-id="CKSV49zL0dQCFcmoaAodsjIHPA">
-                                                                <div id="google_ads_iframe_/1008730/PUK-Middle-Home_0__container__" style="border: 0pt none;">
-                                                                    <iframe id="google_ads_iframe_/1008730/PUK-Middle-Home_0" title="3rd party ad content" name="google_ads_iframe_/1008730/PUK-Middle-Home_0"
-                                                                        width="300" height="250" scrolling="no" marginwidth="0"
-                                                                        marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <footer id="site_footer">
-                    <div id="foot_top" class="container">
-                        <div class="tagline">
-                            <p>Patient is one of the most trusted medical resources online, supplying evidence based information
-                                on a wide range of medical and health topics to patients and health professionals.</p>
-                            <form class="search autocomplete-selfsubmit" action="/search.asp" method="get" role="search">
-                                <fieldset>
-                                    <label> <span class="label screen-reader">Search Patient</span> <span class="field"> <input type="text" autocomplete="off" placeholder="Search Patient" accesskey="4" name="searchterm" class="text search-autocomplete ui-autocomplete-input"> </span> </label>
-                                    <input type="hidden" value="All" name="searchcoll">
-                                    <button type="submit" class="search"><i class="icon icon-search"></i> Search</button>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <div class="social" role="contentinfo" aria-label="Social media links">
-                            <h3 class="title">Connect with us</h3>
-                            <ul class="social-squares">
-                                <li><a href="https://twitter.com/patient" target="_blank" class="soc-twitter">Twitter</a></li>
-                                <li><a href="https://www.pinterest.com/patient" target="_blank" class="soc-pinterest">Pinterest</a></li>
-                                <li><a href="https://www.youtube.com/patient" target="_blank" class="soc-youtube">Youtube</a></li>
-                                <li><a href="https://plus.google.com/+patientuk/posts" target="_blank" class="soc-google">Google+</a></li>
-                                <li><a href="https://www.facebook.com/patient" target="_blank" class="soc-facebook">Facebook</a></li>
-                            </ul><a class="foot-share" href="https://www.facebook.com/patient"> Like us on Facebook! </a></div>
-                    </div>
-                    <div class="foot-links container" role="navigation">
-                        <nav class="nav-foot">
-                            <div class="content-list">
-                                <h5 class="title">For Patients</h5>
-                                <ul>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/health">Health Information</a></li>
-                                            <li><a href="/medicine">Medicines</a></li>
-                                            <li><a href="/clinical-trials">Clinical Trials</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/forums">Discussion Forums</a></li>
-                                            <li><a href="/health/media">Media</a></li>
-                                            <li><a href="/directory">Directory</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/patient-access">Patient Access <span class="icon icon-padlock icon-small mob-hidden"></span></a></li>
-                                            <li><a href="/symptom-checker">Symptom Checker</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/blogs">Blogs</a></li>
-                                            <li><a href="/mobile">Mobile Apps</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="content-list mob-hidden">
-                                <h5 class="title">For Health Professionals</h5>
-                                <ul>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/patientplus">Patient Plus</a></li>
-                                            <li><a href="/guidelines">UK Clinical Guidelines</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/directory/evidence-based-medicine">Evidence Based Medicine</a></li>
-                                            <li><a href="/decision-aids">Shared Decision Aids</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/blogs/pro">Healthcare Pro Blog</a></li>
-                                            <li><a href="/medical-calculators">Medical Calculators</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/dvla">DVLA</a></li>
-                                            <li><a href="/directory/medliner-information">Medline Information</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="content-list about mob-hidden">
-                                <h5 class="title">About Patient</h5>
-                                <ul>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/awards">Awards</a></li>
-                                            <li><a target="_blank" href="https://www.emishealth.com/about-us/careers-with-emis-health">Careers</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a accesskey="9" href="/feedback">Contact / Feedback</a></li>
-                                            <li><a href="/cookies">Cookie Policy</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="/editorial-policy">Editorial Policy</a></li>
-                                            <li><a href="/privacy-policy">Privacy Policy</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a accesskey="8" href="/terms-and-conditions">Disclaimer / Terms</a></li>
-                                            <li><a href="/sitemap.xml">XML Sitemap</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="media-ribbon"><a href="/about-us">About Us</a><span>|</span> <a href="/media-enquiries">Media Enquiries</a><span>|</span>                        <a href="/press-releases">Press Releases</a><span>|</span> <a href="/commercial-opportunities">Commercial Opportunities</a></div>
-                    <div aria-label="Patient awards" class="site-footer_awards" role="contentinfo"><a href="/awards#ehi" target="_blank" title="EHI Awards 2014 Winner" class="site-footer_awards--ehi"> </a>                        <a href="/awards#experian" target="_blank" title="Hitwise top 10 website" class="site-footer_awards--experian"> </a>                        <a href="/awards#woty" target="_blank" title="Website of the year 2015" class="site-footer_awards--woty"> </a>                        <a href="/awards#rsph" target="_blank" title="Royal society for public health" class="site-footer_awards--rsph"> </a>                        <a href="/awards#moma" target="_blank" title="2015 MOMA Awards winners" class="site-footer_awards--moma"> </a>                        <a href="http://www.england.nhs.uk/tis/" target="_blank" title="The Information Standard" rel="nofollow"
-                            class="site-footer_awards--infostd"> </a> <a href="https://www.healthonnet.org/HONcode/Conduct.html?HONConduct950113"
-                            target="_blank" title="Hon Code Certified" rel="nofollow" class="site-footer_awards--honcode"> </a></div>
-                    <p class="site_credit tiny" role="contentinfo">� Patient Platform Limited. Registered in England and Wales. Registered number: 10004395 Registered office:
-                        Rawdon House, Green Lane, Yeadon, Leeds LS19 7BY
-                        <br>Patient is a UK registered trade mark.</p>
-                </footer>
-                <div class="clear"></div>
-            </div>
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Friendly Chat">
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Friendly Chat">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+
+  <!-- Tile icon for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-navbutton-color" content="#303F9F">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!-- App Styling -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="desktop" data-rate0="0.78775" data-ptoken="c627ff16-ab83-4b3a-a534-7342054c9c65" data-globaltargeting="{&quot;Audience&quot;:&quot;Patient&quot;}">
+  <!-- Header section containing logo -->
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-green-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <h3><i class="material-icons">chat_bubble_outline</i> Patient Triage</h3>
+      </div>
+      <div id="user-container">
+        <div hidden id="user-pic"></div>
+        <div hidden id="user-name"></div>
+        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Sign-out
+        </button>
+        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="zone zone-body-head">
+    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSV6TC" height=0 width=0 style=display:none;visibility:hidden&gt;&lt;/iframe&gt;</noscript>
+    <noscript>&lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;amp;c2=18382780&amp;amp;cv=2.0&amp;amp;cj=1"&gt;</noscript>
+  </div><a class="skip-to-content button button-red nomob" href="#content">Skip to content</a>
+  <div id="uber">
+    <div class="mobile-viewport overthrow"><a name="header"></a>
+      <header id="site_head" role="banner">
+        <div id="account"><span class="welcome">Welcome to Patient</span>
+          <div class="auth-opts reg-opts"><span class="title mob-hidden"><a href="#" data-mobile-href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Register</a></span>            <span class="title nodesk"><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Register</a></span>
+            <ul class="opts nomob">
+              <li><a class="first" target="_blank" href="https://patient.emisaccess.co.uk/register">Patient Access</a></li>
+              <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Patient</a></li>
+              <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2Fforums&amp;referrer=patient">- Forums</a></li>
+              <li><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fauth.patient.info%2Fmy-account%2Fsubscriptions&amp;referrer=patient"
+                  class="last">- PatientPro</a></li>
+            </ul>
+          </div><span>|</span>
+          <div class="auth-opts signin-opts"><span class="title mob-hidden"><a href="#" data-mobile-href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Sign in</a></span>            <span class="title nodesk"><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Sign in</a></span>
+            <ul class="opts nomob">
+              <li><a class="first" target="_blank" href="https://patient.emisaccess.co.uk">Patient Access</a></li>
+              <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Patient</a></li>
+              <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2Fforums&amp;referrer=patient">- Forums</a></li>
+              <li><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2Fmy-account%2Fnotes&amp;referrer=patient"
+                  class="last">- PatientPro</a></li>
+            </ul>
+          </div>
         </div>
-        <article class="hide-print cookie-policy js-gizmo grid-100 grid-container" js-data="cookie-policy" style="display: none;">
-            <div class="cookie-policy_content">
-                <div class="cookie-policy_text grid-80">This website uses cookies. By continuing to use this site you are agreeing to its <a href="https://patient.info/cookies"
-                        title="use of cookies"><strong> use of cookies</strong></a>.</div>
-                <button class="button button-green cookie-policy_close" title="Accept and Close">I Agree <i class="icon icon-tick"></i></button>
+        <div id="site_logo"><a class="screen-reader" href="/">Patient - Trusted medical information and support</a></div><a class="screen-reader"
+          href="#content">Skip to content</a>
+        <div class="secondary">
+          <p class="nomob"><a class="" href="/blogs">Blogs</a> | <a class="" href="/symptom-checker">Symptom checker</a></p>
+          <button type="button" data-track="search" class="site_btn site_btn--search nodesk"><i class="icon icon-search"></i></button>
+          <form method="get" action="/search.asp" class="search autocomplete-selfsubmit mob-hidden" role="search">
+            <fieldset>
+              <label> <span class="label screen-reader">Search Patient</span> <span class="field"> <input type="text" class="text search-autocomplete ui-autocomplete-input" name="searchterm" accesskey="4" placeholder="Search Patient" autocomplete="off"> </span> </label>
+              <input type="hidden" name="searchcoll" value="All">
+              <button type="submit" class="icon icon-search search-button"></button>
+            </fieldset>
+          </form>
+        </div>
+        <button type="button" data-track="menu" class="site_btn site_btn--all nodesk"><i class="icon icon-menu"></i></button>
+        <nav class="site_nav mob-hidden" role="navigation">
+          <ul>
+            <li class="nav-item patientaccess nodesk"><a class="nav-link" href="/patient-access">Patient Access</a></li>
+            <li class="nav-item home current"><a class="nav-link" accesskey="1" href="/">Home</a></li>
+            <li class="nav-item patient"><a class="nav-link" href="/health">Health Information</a>
+              <div class="menu nomob" id="patient_nav"><a href="/health/a-z" class="browse"><i class="icon icon-az"></i> Health A-Z</a> <a href="/health/categories"
+                  class="browse"><i class="icon icon-categories"></i> All categories</a>
+                <div class="top-articles">
+                  <p class="top-articles_title">Most popular</p>
+                  <ul class="top-articles_list">
+                    <li><a href="/health/chest-infection">Chest Infection</a></li>
+                    <li><a href="/health/chest-pain-leaflet">Chest Pain</a></li>
+                    <li><a href="/health/heel-and-foot-pain-plantar-fasciitis">Heel and Foot Pain</a></li>
+                    <li><a href="/health/rectal-bleeding-blood-in-faeces">Rectal Bleeding</a></li>
+                    <li><a href="/health/food-poisoning-in-adults">Food Poisoning in Adults</a></li>
+                  </ul>
+                </div>
+                <ul class="mega-menu">
+                  <li class="diabetes"><a href="/diabetes"> <span class="icon icon-diabetes"></span><p class="title">Diabetes Hub</p><p>Visit our Diabetes health hub</p></a></li>
+                  <li class="depression"><a href="/depression"> <span class="icon icon-mental"></span><p class="title">Depression Hub</p><p>Visit our Depression health hub</p></a></li>
+                  <li class="symptom"><a href="/symptom-checker"> <span class="icon icon-symptom"></span><p class="title">Symptom Checker</p><p>Help diagnose common conditions</p></a></li>
+                  <li class="media"><a href="/health/media"> <span class="icon icon-video"></span><p class="title">Videos and slideshows</p><p>Watch and learn about your health</p></a></li>
+                  <li class="da"><a href="/decision-aids"> <span class="icon icon-da"></span><p class="title">Decision Aids</p><p>Help choosing the right treatment</p></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item meds"><a class="nav-link" href="/medicine">Medicines</a>
+              <div class="menu nomob" id="meds_nav"><a href="/medicine/a-z" class="browse"><i class="icon icon-az"></i> Medicines A-Z</a>
+                <a href="/medicine/categories" class="browse"><i class="icon icon-categories"></i> All categories</a>
+                <a href="/clinical-trials" class="browse"><i class="icon icon-tests"></i> Clinical Trials</a>
+                <div class="top-articles">
+                  <p class="top-articles_title">Most popular</p>
+                  <ul class="top-articles_list">
+                    <li><a href="/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn">Naproxen (Naprosyn)</a></li>
+                    <li><a href="/medicine/citalopram-cipramil-paxoran">Citalopram (Cipramil, Paxoran)</a></li>
+                    <li><a href="/medicine/flucloxacillin-for-infection-floxapen">Flucloxacillin (Floxapen)</a></li>
+                    <li><a href="/medicine/co-amoxiclav-for-infections-augmentin">Co-amoxiclav (Augmentin)</a></li>
+                    <li><a href="/medicine/paracetamol-calpol-disprol-hedex-panadol">Paracetamol (Calpol, Disprol)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item pro"><a class="nav-link" href="/patientplus">Professional Reference</a>
+              <div class="menu nomob" id="pro_nav"><a href="/patientplus/a-z" class="browse"><i class="icon icon-az"></i> PatientPlus A-Z</a>
+                <ul class="mega-menu">
+                  <li class="ppro"><a href="/complete"> <span class="icon icon-ppro"></span><p class="title">PatientPro Complete</p><p>Create a reflective diary, track the pages you read and get ads free experience</p></a></li>
+                  <li class="calc"><a href="/medical-calculators"> <span class="icon icon-calc"></span><p class="title">Medical Calculators</p></a></li>
+                  <li class="guidelines"><a href="/guidelines"> <span class="icon icon-guidelines"></span><p class="title">Clinical Guidelines</p></a></li>
+                  <li class="updates"><a href="/content-updates"> <span class="icon icon-updates"></span><p class="title">New leaflets and updates</p></a></li>
+                  <li class="da"><a href="/decision-aids"> <span class="icon icon-da"></span><p class="title">Decision Aids</p></a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item forum"><a class="nav-link" href="/forums">Forums</a></li>
+            <li class="nav-item directory"><a class="nav-link" href="/directory">Directory</a></li>
+            <li class="nav-item blogs nodesk"><a class="nav-link" href="/blogs">Blogs</a></li>
+            <li class="nav-item nomob access2"><a href="/patient-access" class="nav-link">Patient Access</a>
+              <div class="menu pa-reg"><a href="https://patient.emisaccess.co.uk/" target="_blank"><span class="icon icon-padlock"></span> Sign in</a>                <a href="https://patient.emisaccess.co.uk/register" target="_blank"><span class="icon icon-access"></span> Register</a></div>
+            </li>
+          </ul>
+        </nav>
+      </header><a id="to-content" accesskey="S"></a>
+      <section id="content" role="main">
+        <div class="container_12">
+          <div id="container" class="homepage nolayout">
+            <div class="zone zone-content">
+              <article class="homepage content-item">
+                <header></header>
+                <div class="orchard-layouts-root">
+                  <div class="table grid-container">
+                    <div class="row">
+                      <div class="span-12 cell">
+                        <article class="homepage_container--top">
+                          <h2 class="homepage_container--titleabove">How can</h2>
+                          <h2 class="homepage_container--titlebelow">we help?</h2>
+                          <ul class="homepage_tabs">
+                            <a href="#">
+                              <li class="homepage_tabs--tab active"><span class="icon icon-pil"></span>Search Health
+                                <br> Information</li>
+                            </a>
+                            <a href="/symptom-checker" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','symptomchecker'])">
+                              <li class="homepage_tabs--tab"><span class="icon icon-symptom"></span>Search by
+                                <br> Symptoms</li>
+                            </a>
+                            <a href="/health/a-z" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','A-Z'])">
+                              <li class="homepage_tabs--tab"><span class="icon icon-az"></span>Search by
+                                <br> letter</li>
+                            </a>
+                            <a href="/health/categories" onclick="_gaq.push(['_trackEvent','Homepage','searchtab','categories'])">
+                              <li class="homepage_tabs--tab"><span class="icon icon-categories"></span>Search by
+                                <br> Category</li>
+                            </a>
+                          </ul>
+                          <div class="homepage_form--wrapper">
+                            <form method="get" action="/search.asp" class="home-search" onsubmit="_gaq.push(['_trackEvent','Homepage','search-button','search-clicked'])">
+                              <fieldset>
+                                <label> <span class="label screen-reader">Search patient.info</span> <span class="field"> <input type="text" class="text" name="searchterm" accesskey="4" placeholder="Search..." autocomplete="off" data-cip-id="cIPJQ342845643"> </span> </label>
+                                <input type="hidden" name="searchcoll" value="All">
+                                <input type="submit" class="search-big" alt="Search" value="Search">
+                              </fieldset>
+                            </form>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="row grid-container">
+                      <div class="span-6 cell grid-50">
+                        <div style="overflow:hidden">
+                          <div class="homepage_hub homepage_hub--diabetes"><i class="icon icon-diabetes icon-large"></i>
+                            <h2>Diabetes</h2><a href="/diabetes" title="Diabetes health hub" class="homepage_hub-link" onclick="_gaq.push(['_trackEvent','Homepage','hublink','diabeteshub'])">View health hub <i class="icon icon-raquo"></i></a></div>
+                          <div class="homepage_hub homepage_hub--depression"><i class="icon icon-mental icon-large"></i>
+                            <h2>Depression</h2><a href="/depression" title="Depression health hub" class="homepage_hub-link"
+                              onclick="_gaq.push(['_trackEvent','Homepage','hublink','depressionhub'])">View health hub <i class="icon icon-raquo"></i></a></div>
+                        </div>
+                      </div>
+                      <div class="span-6 cell homepage_main--symptomchecker grid-50"><span class="icon icon-symptom"></span>
+                        <h2>Symptom Checker</h2>
+                        <p class="sub">Assess your symptoms online through our free symptom checker.</p><a href="/symptom-checker" onclick="_gaq.push(['_trackEvent','Homepage','symptomlink','symptombutton'])"
+                          class="homepage_main--button">Check Symptoms <span class="icon icon-raquo"></span></a></div>
+                    </div>
+                    <div class="row">
+                      <div class="span-12 cell">
+                        <div class="homepage_popular">
+                          <h3 class="homepage_popular-title">Most popular</h3>
+                          <ul class="homepage_popular-list grid-container">
+                            <li class="grid-33"><a href="/health/chest-infection">Chest Infection</a></li>
+                            <li class="grid-33"><a href="/health/chest-pain-leaflet">Chest Pain</a></li>
+                            <li class="grid-33"><a href="/health/heel-and-foot-pain-plantar-fasciitis">Heel and Foot Pain</a></li>
+                            <li class="grid-33"><a href="/health/rectal-bleeding-blood-in-faeces">Rectal Bleeding</a></li>
+                            <li class="grid-33"><a href="/health/food-poisoning-in-adults">Food Poisoning in Adults</a></li>
+                            <li class="grid-33"><a href="/health/bacterial-vaginosis-leaflet">Bacterial Vaginosis</a></li>
+                            <li class="grid-33"><a href="/health/medicines-for-nausea">Medicines for Nausea</a></li>
+                            <li class="grid-33"><a href="/health/care-of-rib-injuries">Care of Rib Injuries</a></li>
+                            <li class="grid-33"><a href="/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn">Naproxen (Naprosyn)</a></li>
+                            <li class="grid-33"><a href="/medicine/citalopram-cipramil-paxoran">Citalopram (Cipramil, Paxoran)</a></li>
+                            <li class="grid-33"><a href="/medicine/flucloxacillin-for-infection-floxapen">Flucloxacillin (Floxapen)</a></li>
+                            <li class="grid-33"><a href="/medicine/co-amoxiclav-for-infections-augmentin">Co-amoxiclav (Augmentin)</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="span-12 cell">
+                        <article class="homepage_sarah--container">
+                          <div class="homepage_sarah--logo"></div>
+                          <p>TV's Dr Sarah Jarvis' exclusive blogs and health information videos</p>
+                          <div class="homepage_sarah--blog-list">
+                            <ul>
+                              <li><a href="/blogs/sarah-says/2017/06/oral-cancer-the-signs-to-spot">Oral Cancer: the signs to spot</a></li>
+                              <li><a href="/blogs/sarah-says/2017/06/common-medical-myths-gps-often-hear">Common medical myths GPs often hear</a></li>
+                              <li><a href="/blogs/sarah-says/2017/06/heart-attack-risk-how-do-you-know">Heart attack risk - how do you know?</a></li>
+                            </ul>
+                          </div><a href="/blogs/sarah-says" onclick="pa.trackEvent('Homepage','SarahLink','SarahsBlog')" class="homepage_sarah--button active">Sarah's Blog</a>                          <a href="/health/media/videos/drsarah" onclick="pa.trackEvent('Homepage','SarahLink','SarahsVideos')"
+                            class="homepage_sarah--button">Sarah's videos</a>
+                          <div style="top:20px" class="ad ad-300">
+                            <div class="advertise-with-us js-gizmo" data-gizmo="advert"><span class="advertise-title">Advertisement</span><a href="/adfree" target="_top" class="advertise-close">�</a></div>
+                            <div id="PUK-Middle-Home" class="dfp dfp-all display-block" data-adunit="PUK-Middle-Home" data-dimensions="300x250" data-targeting="{}"
+                              data-google-query-id="CKSV49zL0dQCFcmoaAodsjIHPA">
+                              <div id="google_ads_iframe_/1008730/PUK-Middle-Home_0__container__" style="border: 0pt none;">
+                                <iframe id="google_ads_iframe_/1008730/PUK-Middle-Home_0" title="3rd party ad content" name="google_ads_iframe_/1008730/PUK-Middle-Home_0"
+                                  width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"
+                                  srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
-        </article>
-        <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
-        <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
-        <noscript>
-            &lt;div style="display: none;"&gt; &lt;img src="//pixel.quantserve.com/pixel/p--nng-TfTNbYL9.gif" height="1" width="1" alt="Quantcast"&gt;
-            &lt;/div&gt;
-        </noscript>
-        </body>
+          </div>
+        </div>
+      </section>
+      <footer id="site_footer">
+        <div id="foot_top" class="container">
+          <div class="tagline">
+            <p>Patient is one of the most trusted medical resources online, supplying evidence based information on a wide range
+              of medical and health topics to patients and health professionals.</p>
+            <form class="search autocomplete-selfsubmit" action="/search.asp" method="get" role="search">
+              <fieldset>
+                <label> <span class="label screen-reader">Search Patient</span> <span class="field"> <input type="text" autocomplete="off" placeholder="Search Patient" accesskey="4" name="searchterm" class="text search-autocomplete ui-autocomplete-input"> </span> </label>
+                <input type="hidden" value="All" name="searchcoll">
+                <button type="submit" class="search"><i class="icon icon-search"></i> Search</button>
+              </fieldset>
+            </form>
+          </div>
+          <div class="social" role="contentinfo" aria-label="Social media links">
+            <h3 class="title">Connect with us</h3>
+            <ul class="social-squares">
+              <li><a href="https://twitter.com/patient" target="_blank" class="soc-twitter">Twitter</a></li>
+              <li><a href="https://www.pinterest.com/patient" target="_blank" class="soc-pinterest">Pinterest</a></li>
+              <li><a href="https://www.youtube.com/patient" target="_blank" class="soc-youtube">Youtube</a></li>
+              <li><a href="https://plus.google.com/+patientuk/posts" target="_blank" class="soc-google">Google+</a></li>
+              <li><a href="https://www.facebook.com/patient" target="_blank" class="soc-facebook">Facebook</a></li>
+            </ul><a class="foot-share" href="https://www.facebook.com/patient"> Like us on Facebook! </a></div>
+        </div>
+        <div class="foot-links container" role="navigation">
+          <nav class="nav-foot">
+            <div class="content-list">
+              <h5 class="title">For Patients</h5>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="/health">Health Information</a></li>
+                    <li><a href="/medicine">Medicines</a></li>
+                    <li><a href="/clinical-trials">Clinical Trials</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/forums">Discussion Forums</a></li>
+                    <li><a href="/health/media">Media</a></li>
+                    <li><a href="/directory">Directory</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/patient-access">Patient Access <span class="icon icon-padlock icon-small mob-hidden"></span></a></li>
+                    <li><a href="/symptom-checker">Symptom Checker</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/blogs">Blogs</a></li>
+                    <li><a href="/mobile">Mobile Apps</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="content-list mob-hidden">
+              <h5 class="title">For Health Professionals</h5>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="/patientplus">Patient Plus</a></li>
+                    <li><a href="/guidelines">UK Clinical Guidelines</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/directory/evidence-based-medicine">Evidence Based Medicine</a></li>
+                    <li><a href="/decision-aids">Shared Decision Aids</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/blogs/pro">Healthcare Pro Blog</a></li>
+                    <li><a href="/medical-calculators">Medical Calculators</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/dvla">DVLA</a></li>
+                    <li><a href="/directory/medliner-information">Medline Information</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="content-list about mob-hidden">
+              <h5 class="title">About Patient</h5>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="/awards">Awards</a></li>
+                    <li><a target="_blank" href="https://www.emishealth.com/about-us/careers-with-emis-health">Careers</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a accesskey="9" href="/feedback">Contact / Feedback</a></li>
+                    <li><a href="/cookies">Cookie Policy</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="/editorial-policy">Editorial Policy</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a accesskey="8" href="/terms-and-conditions">Disclaimer / Terms</a></li>
+                    <li><a href="/sitemap.xml">XML Sitemap</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="media-ribbon"><a href="/about-us">About Us</a><span>|</span> <a href="/media-enquiries">Media Enquiries</a><span>|</span>
+          <a href="/press-releases">Press Releases</a><span>|</span> <a href="/commercial-opportunities">Commercial Opportunities</a></div>
+        <div aria-label="Patient awards" class="site-footer_awards" role="contentinfo"><a href="/awards#ehi" target="_blank" title="EHI Awards 2014 Winner" class="site-footer_awards--ehi"> </a> <a href="/awards#experian"
+            target="_blank" title="Hitwise top 10 website" class="site-footer_awards--experian"> </a> <a href="/awards#woty"
+            target="_blank" title="Website of the year 2015" class="site-footer_awards--woty"> </a> <a href="/awards#rsph"
+            target="_blank" title="Royal society for public health" class="site-footer_awards--rsph"> </a> <a href="/awards#moma"
+            target="_blank" title="2015 MOMA Awards winners" class="site-footer_awards--moma"> </a> <a href="http://www.england.nhs.uk/tis/"
+            target="_blank" title="The Information Standard" rel="nofollow" class="site-footer_awards--infostd"> </a>
+          <a href="https://www.healthonnet.org/HONcode/Conduct.html?HONConduct950113" target="_blank" title="Hon Code Certified" rel="nofollow"
+            class="site-footer_awards--honcode"> </a>
+        </div>
+        <p class="site_credit tiny" role="contentinfo">� Patient Platform Limited. Registered in England and Wales. Registered number: 10004395 Registered office: Rawdon
+          House, Green Lane, Yeadon, Leeds LS19 7BY
+          <br>Patient is a UK registered trade mark.</p>
+      </footer>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <article class="hide-print cookie-policy js-gizmo grid-100 grid-container" js-data="cookie-policy" style="display: none;">
+    <div class="cookie-policy_content">
+      <div class="cookie-policy_text grid-80">This website uses cookies. By continuing to use this site you are agreeing to its <a href="https://patient.info/cookies"
+          title="use of cookies"><strong> use of cookies</strong></a>.</div>
+      <button class="button button-green cookie-policy_close" title="Accept and Close">I Agree <i class="icon icon-tick"></i></button>
+    </div>
+  </article>
+  <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  <noscript>
+    &lt;div style="display: none;"&gt; &lt;img src="//pixel.quantserve.com/pixel/p--nng-TfTNbYL9.gif" height="1" width="1" alt="Quantcast"&gt;
+    &lt;/div&gt;
+  </noscript>
+</body>
+
+<div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+
+  <!-- Messages container -->
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+      <div id="messages">
+        <span id="message-filler"></span>
+      </div>
+      <form id="message-form" action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="message">
+          <label class="mdl-textfield__label" for="message">Message...</label>
+        </div>
+        <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Send
+            </button>
+        <button id="speech" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="startSpeech(event)">
+              <i style="font-size:30px" class="fa fa-microphone"></i>
+            </button>
+      </form>
+      <form id="image-form" action="#">
+        <input id="mediaCapture" type="file" accept="image/*,capture=camera">
+        <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+              <i class="material-icons">image</i>
+            </button>
+      </form>
+    </div>
+
+  <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+
 </div>
 
-<div id="Interim" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; padding: 0px; border: 0px; background: transparent; overflow: hidden; position: fixed; z-index: 16000001; right: 10px; bottom: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; display: block; width: 340px; height: 400px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 2px;">
-    <object type="text/html" data="http://localhost:5000/" width="340px" height="400px" style="overflow:auto;">
-    </object>
-</div>
+<script src="/__/firebase/3.8.0/firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="scripts/ApiAi.js"></script>
+
+<script src="scripts/main.js"></script>
 
 </html>
