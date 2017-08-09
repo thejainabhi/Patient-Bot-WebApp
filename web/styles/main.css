@@ -17,16 +17,25 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
-main, #messages-card {
-  height: 100%;
-  padding-bottom: 0;
-}
 #messages-card-container {
   height: calc(100% - 150px);
   padding-bottom: 0;
-}
-#messages-card {
-  margin-top: 15px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  border: 0px;
+  background: white;
+  overflow: hidden;
+  position: fixed;
+  z-index: 16000001;
+  right: 0px;
+  bottom: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  width: 340px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 2px;
 }
 .mdl-layout__header-row span {
   margin-left: 15px;
@@ -46,7 +55,7 @@ main, #messages-card {
   margin: 0 auto;
 }
 .mdl-card__supporting-text {
-  width: auto;
+  width: 95%;
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
@@ -197,3 +206,22 @@ main, #messages-card {
   top: -1px;
   margin-right: 5px;
 }
+
+  #parent {
+    margin: 0 auto;
+    width: 980px;
+    float: none;
+  }
+
+  #child-left {
+    float: left;
+    width: 300px;
+    height: 200px;
+    border: solid 1px #0F0;
+  }
+
+  #child-right {
+    float: left;
+    width: 100px;
+  }
+  
