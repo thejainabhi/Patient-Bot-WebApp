@@ -400,6 +400,6 @@ function onBotFailure(serverError) {
 
 window.onload = function () {
   window.friendlyChat = new FriendlyChat();
-  window.botClient = new ApiAi.ApiAiClient({ accessToken: 'dcd2779937d349c9ac9eeb7e8043ab64' });
+  window.botClient = new ApiAi.ApiAiClient({ accessToken: '09744aa8a2a04880bd0120c8da49e3d5 ' });
 };
 
