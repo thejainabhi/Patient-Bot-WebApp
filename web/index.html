@@ -435,8 +435,8 @@
   <script async src="//egton-d.openx.net/w/1.0/jstag?nc=1008730-patient_info"></script>
 </body>
 
-<div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
-
+<div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid collapse in">
+  
   <!-- Messages container -->
   <div id="header-bot" style="background-color: #0F2E4C;color: #fff;height: 35px;box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);">
     <div class="row">
@@ -451,7 +451,10 @@
                 ">Patient bot</div>
       </div>
       <div class="col-md-4 col-xs-4" style="text-align: right;">
-        <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+        <span style="padding-top: 15px;padding-right: 15px;">
+    <button data-toggle="collapse" data-target="#messages-card-container" class="btn-minimize">
+    </button>
+</span>
       </div>
     </div>
   </div>
@@ -460,22 +463,31 @@
       <span id="message-filler"></span>
     </div>
     <form id="message-form" action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
         <input class="mdl-textfield__input" type="text" id="message">
         <label class="mdl-textfield__label" for="message">Message...</label>
       </div>
-      <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <button id="submit" disabled="" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"
+        style="
+    width: 10px;
+">
               Send
-            </button>
-      <button id="speech" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="startSpeech(event)">
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+      <button id="speech" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="startSpeech(event)"
+        data-upgraded=",MaterialButton,MaterialRipple" style="
+    width: 10px;
+">
               <i style="font-size:30px" class="fa fa-microphone"></i>
-            </button>
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
     </form>
     <form id="image-form" action="#">
       <input id="mediaCapture" type="file" accept="image/*,capture=camera">
-      <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+      <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white"
+        data-upgraded=",MaterialButton,MaterialRipple" style="
+    width: 40px;
+">
               <i class="material-icons">image</i>
-            </button>
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
     </form>
   </div>
 
