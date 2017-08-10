@@ -91,11 +91,8 @@
 
 <body class="desktop" data-rate0="0.78775" data-ptoken="c627ff16-ab83-4b3a-a534-7342054c9c65" data-globaltargeting="{&quot;Audience&quot;:&quot;Patient&quot;}">
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-green-700">
+  <header class="mdl-layout__header mdl-color-text--white mdl-color-700" style="background-color: #0F2E4C;">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-        <h3><i class="material-icons">chat_bubble_outline</i> Patient Bot</h3>
-      </div>
       <div id="user-container">
         <div hidden id="user-pic"></div>
         <div hidden id="user-name"></div>
@@ -122,80 +119,85 @@
   </div>
   <div id=uber>
     <div class="mobile-viewport overthrow"><a name=header></a>
-      <header id=site_head role=banner>
-        <div id=account>
-          <div class=container>
-            <div class=row>
-              <div class=col>
-                <div class="auth-opts signin-opts"><span class=title><a href="https://auth.patient.info/login?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Sign in</a></span></div>
-                <div class="auth-opts reg-opts"><span class=title><a href="https://auth.patient.info/register?returnurl=https%3a%2f%2fpatient.info%2f&amp;referrer=patient">Register</a></span></div>
+      <header id="site_head" role="banner">
+        <div class="container1" style="height: fit-content;padding-left: 145px;padding-right: 15px;">
+          <div class="row site_logo-container">
+            <div class="col-md-6">
+              <div id="site_logo"><span class="sr-only sr-only-focusable">Patient - Trusted medical information and support</span><a href="/"> <img class="site_logo-svg" src="https://patient.azureedge.net/gfx/interim-patient-logo.svg" alt="Patient.info Logo"> </a></div>
+              <button class="btn site-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"> <i class="icon icon-menu"></i> </button>              <button type="button" data-track="search" data-toggle="collapse" data-target="#mobiledeviceSearch" class="btn site-btn site-btn_search"> <i class="icon icon-search"></i> </button></div>
+            <div class="col-md-6">
+              <div class="secondary navbar-toggleable-sm">
+                <div id="mobiledeviceSearch" class="collapse navbar-collapse w-100">
+                  <form method="get" action="/search.asp" class="search autocomplete-selfsubmit w-100" role="search">
+                    <fieldset>
+                      <div class="row justify-content-end no-gutters"><label class="col col-md-10 col-lg-8"> <span class="label sr-only sr-only-focusable">Search Patient</span> <span class="field"> <input type="text" class="text search-autocomplete form-control search_input ui-autocomplete-input" data-ac-wrapper="#head-search-wrapper" name="searchterm" accesskey="4" placeholder="Search Patient"> <span id="head-search-wrapper" class="search-ac-wrapper"><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul></span> </span> </label>                        <input type="hidden" name="searchcoll" value="All"> <button type="submit" class="search_button btn-link"><i class="icon icon-search"></i></button></div>
+                    </fieldset>
+                  </form>
+                </div>
               </div>
-              <div class="col col-sm-4"><span class=title><a href=https://patient.info/patient-access class=pa>Patient Access</a></span></div>
             </div>
           </div>
-        </div>
-        <div class=container>
-          <nav class="site_nav mob-hidden navbar-toggleable-sm" role=navigation>
-            <div class="collapse navbar-collapse" id=navbarSupportedContent>
+          <nav class="site_nav mob-hidden navbar-toggleable-sm" role="navigation">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar navbar-nav">
-                <li class="nav-item patient"><a class=nav-link href=/health id=healthDropdownMenu aria-expanded=false>Health</a>
-                  <div class="menu hidden-lg-down" id=patient_nav aria-labelledby=healthDropdownMenu>
-                    <p class=nav-item_title>Explore Health Information</p>
-                    <ul class=nav-item_list>
-                      <li><a href=/health/a-z class=browse title="Health A-Z">Health A-Z</a></li>
-                      <li><a href=/health/chest-infection>Chest Infection</a></li>
-                      <li><a href=/health/chest-pain-leaflet>Chest Pain</a></li>
-                      <li><a href=/health/heel-and-foot-pain-plantar-fasciitis>Heel and Foot Pain</a></li>
-                      <li><a href=/health/rectal-bleeding-blood-in-faeces>Rectal Bleeding</a></li>
-                      <li><a href=/health/food-poisoning-in-adults>Food Poisoning in Adults</a></li>
-                      <li><a href=/health/categories class=browse title="View all categories">View all categories</a></li>
+                <li class="nav-item patient"><a class="nav-link" href="/health" id="healthDropdownMenu" aria-expanded="false">Health</a>
+                  <div class="menu hidden-lg-down" id="patient_nav" aria-labelledby="healthDropdownMenu">
+                    <p class="nav-item_title">Explore Health Information</p>
+                    <ul class="nav-item_list">
+                      <li><a href="/health/a-z" class="browse" title="Health A-Z">Health A-Z</a></li>
+                      <li><a href="/health/chest-infection">Chest Infection</a></li>
+                      <li><a href="/health/chest-pain-leaflet">Chest Pain</a></li>
+                      <li><a href="/health/heel-and-foot-pain-plantar-fasciitis">Heel and Foot Pain</a></li>
+                      <li><a href="/health/rectal-bleeding-blood-in-faeces">Rectal Bleeding</a></li>
+                      <li><a href="/health/food-poisoning-in-adults">Food Poisoning in Adults</a></li>
+                      <li><a href="/health/categories" class="browse" title="View all categories">View all categories</a></li>
                     </ul>
-                    <ul class=mega-menu>
-                      <li class=diabetes><a href=/diabetes tabindex=-1> <span class="icon icon-diabetes"></span><p class=title>Diabetes Hub</p></a></li>
-                      <li class=depression><a href=/depression tabindex=-1> <span class="icon icon-mental"></span><p class=title>Depression Hub</p></a></li>
-                      <li class=symptom><a href=/symptom-checker tabindex=-1> <span class="icon icon-symptom"></span><p class=title>Symptom Checker</p></a></li>
-                      <li class=media><a href=/health/media tabindex=-1> <span class="icon icon-video"></span><p class=title>Videos and slideshows</p></a></li>
-                      <li class=da><a href=/decision-aids tabindex=-1> <span class="icon icon-da"></span><p class=title>Decision Aids</p></a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item meds"><a class=nav-link href=/medicine id=medsDropdownMenu aria-expanded=false>Medicine</a>
-                  <div class="menu hidden-lg-down" id=meds_nav aria-labelledby=medsDropdownMenu>
-                    <p class=nav-item_title>Explore Drugs and Medicines</p>
-                    <ul class=nav-item_list>
-                      <li><a href=/medicine/a-z class=browse title="Medicine A-Z">Medicine A-Z</a></li>
-                      <li><a href=/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn>Naproxen (Naprosyn)</a></li>
-                      <li><a href=/medicine/citalopram-cipramil-paxoran>Citalopram (Cipramil, Paxoran)</a></li>
-                      <li><a href=/medicine/flucloxacillin-for-infection-floxapen>Flucloxacillin (Floxapen)</a></li>
-                      <li><a href=/medicine/co-amoxiclav-for-infections-augmentin>Co-amoxiclav (Augmentin)</a></li>
-                      <li><a href=/medicine/paracetamol-calpol-disprol-hedex-panadol>Paracetamol (Calpol, Disprol)</a></li>
-                      <li><a href=/medicine/categories class=browse title="View all categories">View all categories</a></li>
+                    <ul class="mega-menu">
+                      <li class="diabetes"><a href="/diabetes" tabindex="-1"> <span class="icon icon-diabetes"></span><p class="title">Diabetes Hub</p></a></li>
+                      <li class="depression"><a href="/depression" tabindex="-1"> <span class="icon icon-mental"></span><p class="title">Depression Hub</p></a></li>
+                      <li class="symptom"><a href="/symptom-checker" tabindex="-1"> <span class="icon icon-symptom"></span><p class="title">Symptom Checker</p></a></li>
+                      <li class="media"><a href="/health/media" tabindex="-1"> <span class="icon icon-video"></span><p class="title">Videos and slideshows</p></a></li>
+                      <li class="da"><a href="/decision-aids" tabindex="-1"> <span class="icon icon-da"></span><p class="title">Decision Aids</p></a></li>
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item pro"><a class=nav-link href=/patientplus id=proDropdownMenu aria-haspopup=true aria-expanded=false>Professional Reference</a>
-                  <div class="menu hidden-lg-down" id=pro_nav aria-labelledby=proDropdownMenu>
-                    <p class=nav-item_title>Explore Professional Reference</p>
-                    <ul class=nav-item_list>
-                      <li><a href=/patientplus/a-z class=browse title="PatientPlus A-Z">PatientPlus A-Z</a></li>
-                    </ul>
-                    <ul class=mega-menu>
-                      <li class=ppro><a href=/complete tabindex=-1> <span class="icon icon-ppro"></span><p class=title>PatientPro <span>Complete</span></p><p>Create a reflective diary, track the pages you read and get ads free experience</p></a></li>
-                      <li class=calc><a href=/medical-calculators tabindex=-1> <span class="icon icon-calc"></span><p class=title>Medical Calculators</p></a></li>
-                      <li class=guidelines><a href=/guidelines tabindex=-1> <span class="icon icon-guidelines"></span><p class=title>Clinical Guidelines</p></a></li>
-                      <li class=updates><a href=/content-updates tabindex=-1> <span class="icon icon-updates"></span><p class=title>New leaflets and updates</p></a></li>
-                      <li class=da><a href=/decision-aids tabindex=-1> <span class="icon icon-da"></span><p class=title>Decision Aids</p></a></li>
+                <li class="nav-item meds"><a class="nav-link" href="/medicine" id="medsDropdownMenu" aria-expanded="false">Medicine</a>
+                  <div class="menu hidden-lg-down" id="meds_nav" aria-labelledby="medsDropdownMenu">
+                    <p class="nav-item_title">Explore Drugs and Medicines</p>
+                    <ul class="nav-item_list">
+                      <li><a href="/medicine/a-z" class="browse" title="Medicine A-Z">Medicine A-Z</a></li>
+                      <li><a href="/medicine/naproxen-tablets-for-pain-and-inflammation-naprosyn">Naproxen (Naprosyn)</a></li>
+                      <li><a href="/medicine/citalopram-cipramil-paxoran">Citalopram (Cipramil, Paxoran)</a></li>
+                      <li><a href="/medicine/flucloxacillin-for-infection-floxapen">Flucloxacillin (Floxapen)</a></li>
+                      <li><a href="/medicine/co-amoxiclav-for-infections-augmentin">Co-amoxiclav (Augmentin)</a></li>
+                      <li><a href="/medicine/paracetamol-calpol-disprol-hedex-panadol">Paracetamol (Calpol, Disprol)</a></li>
+                      <li><a href="/medicine/categories" class="browse" title="View all categories">View all categories</a></li>
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item forum"><a class=nav-link href=/forums>Forums</a></li>
-                <li class="nav-item blogs"><a class=nav-link href=/blogs>Blogs</a></li>
-                <li class="nav-item sc"><a class=nav-link href=/symptom-checker>Symptom Checker</a></li>
+                <li class="nav-item pro"><a class="nav-link" href="/patientplus" id="proDropdownMenu" aria-haspopup="true" aria-expanded="false">Professional Reference</a>
+                  <div class="menu hidden-lg-down" id="pro_nav" aria-labelledby="proDropdownMenu">
+                    <p class="nav-item_title">Explore Professional Reference</p>
+                    <ul class="nav-item_list">
+                      <li><a href="/patientplus/a-z" class="browse" title="PatientPlus A-Z">PatientPlus A-Z</a></li>
+                    </ul>
+                    <ul class="mega-menu">
+                      <li class="ppro"><a href="/complete" tabindex="-1"> <span class="icon icon-ppro"></span><p class="title">PatientPro <span>Complete</span></p><p>Create a reflective diary, track the pages you read and get ads free experience</p></a></li>
+                      <li class="calc"><a href="/medical-calculators" tabindex="-1"> <span class="icon icon-calc"></span><p class="title">Medical Calculators</p></a></li>
+                      <li class="guidelines"><a href="/guidelines" tabindex="-1"> <span class="icon icon-guidelines"></span><p class="title">Clinical Guidelines</p></a></li>
+                      <li class="updates"><a href="/content-updates" tabindex="-1"> <span class="icon icon-updates"></span><p class="title">New leaflets and updates</p></a></li>
+                      <li class="da"><a href="/decision-aids" tabindex="-1"> <span class="icon icon-da"></span><p class="title">Decision Aids</p></a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item forum"><a class="nav-link" href="/forums">Forums</a></li>
+                <li class="nav-item blogs"><a class="nav-link" href="/blogs">Blogs</a></li>
+                <li class="nav-item sc"><a class="nav-link" href="/symptom-checker">Symptom Checker</a></li>
               </ul>
             </div>
           </nav>
         </div>
-      </header><a id=to-content accesskey=S></a>
+      </header>
       <section id=content role=main>
         <div class=container_12>
           <div id=container class="homepage hp nolayout">
@@ -289,7 +291,7 @@
                                   </div>
                                   <div class=col-md-6><a href=/forums class="btn btn-blue hp_forums-cta" onclick="_gaq.push(['_trackEvent','Homepage','forums-register','joinbutton'])">Join our comprehensive forum</a></div>
                                 </div>
-                              </div>                              
+                              </div>
                             </div>
                           </div>
                         </section>
