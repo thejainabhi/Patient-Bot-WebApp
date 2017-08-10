@@ -63,7 +63,7 @@ html, body {
 #messages {
   overflow-y: auto;
   margin-bottom: 10px;
-  height: calc(100% - 80px);
+  height: calc(100% - 100px);
 }
 #message-filler {
   flex-grow: 1;
